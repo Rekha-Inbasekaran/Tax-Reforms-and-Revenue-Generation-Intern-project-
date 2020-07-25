@@ -15,31 +15,24 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::get('/userlogin', function () {
-//     return view('userlogin');
-// });
-
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
 
-Route::get('/insert','NewUserController@insertform');
 
-Route::post('/create','NewUserController@insert');
-
-Route::post('/checkdata','NewUserController@check');
-
-
-Route::get('/entertax','NewUserController@taxdetailsform');
+Route::get('/taxcollection','MunicipalityController@taxcollectionform');
+Route::get('/demand','MunicipalityController@taxdemandform');
+Route::get('/viewreport','MunicipalityController@reportform');
 
 
-Route::get('/addmunicipality','NewUserController@addmunicipalityform');
-
-
-Route::get('/inserttax','NewUserController@inserttax');
-
-Route::get('/insertmunci','NewUserController@insertmunci');
+Route::get('/monthlyreport','MunicipalityController@mreportform');
 
 
 
+Route::get('/annualreport','MunicipalityController@areportform');
 
+
+
+Route::get('/insertcoll','MunicipalityController@insertcoll');
+
+Route::get('/insertdmd','MunicipalityController@insertdmd');
